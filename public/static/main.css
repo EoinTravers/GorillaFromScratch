@@ -1,0 +1,42 @@
+/* static/main.css
+
+Use this file to set the default styling of the elements in our experiment.
+You can use javascript to interactively change these later.
+*/
+#gorilla {
+    /* Everything is in the body, so these rules apply to every element */
+    display: none;     /* Hide everything until we're ready to show it */
+    font-size: 18pt;
+}
+
+#start > * {
+    position: relative;
+}
+
+
+#start, #target, #fix, #feedback, #end {
+    /* Apply these rules to all text paragraphs, unless overrode */
+    position: absolute;
+    left: 50vw;
+    top: 50vh;
+    width: 100vw;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+#target, #fix{
+    font-family: "Lucida Console", Monaco, monospace;
+}
+#fix  {
+    font-size: 4em;
+}
+#target {
+    font-size: 3em;
+}
+#feedback {
+    color: red;
+    font-size: 4em;
+}
+#end {
+    font-size: 3em;
+}

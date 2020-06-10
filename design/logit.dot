@@ -1,0 +1,11 @@
+digraph g{
+    Ready -> PrepareTrial;
+    PrepareTrial -> StartTrial       [label="Wait\n`fixation_time`"];
+    StartTrial -> CheckResponse      [label="On\nkey\npress"];
+    CheckResponse -> ProcessResponse [label="If\nkey is\nallowed"];
+    ProcessResponse -> ErrorFeedback [label="If\nError"];
+    ProcessResponse -> LogData       [label="If\nCorrect"];
+    ErrorFeedback -> LogData         [label="Wait\n`feedback_time`"];
+    LogData -> EndExperiment         [label="If\n`trial_nr >\nn_trials`"];
+    LogData -> StartTrial            [label="If\n`trial_nr <\nn_trials`"];
+}
